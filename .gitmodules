@@ -1,0 +1,8 @@
+[submodule "ecommerce-msa"]
+	path = ecommerce-msa
+	url = https://github.com/Youngwook-Jeon/ecommerce-msa.git
+	branch = main
+[submodule "ecommerce-frontend"]
+	path = ecommerce-frontend
+	url = https://github.com/Youngwook-Jeon/ecommerce-frontend.git
+	branch = main
