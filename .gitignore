@@ -1,0 +1,13 @@
+# Workspace-level run artifacts (Makefile / scripts)
+.run/
+.DS_Store
+
+# local
+.idea/
+.m2-repo
+.m2-temp
+.m2repo
+.vscode
+
+# docs
+/docs/private/
