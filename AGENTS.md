@@ -47,6 +47,7 @@ Prefer the narrowest relevant Maven module or frontend check while iterating, th
 - Prefer constructor injection; avoid field injection and avoid introducing Spring, JPA, Kafka, or provider-specific types into `domain-core`.
 - Use command/query DTOs and port interfaces at layer boundaries. Keep HTTP DTO mapping in `web` and entity/domain mapping in `dataaccess`.
 - Put transaction boundaries at the existing application or adapter boundary, not inside domain entities. Preserve outbox writes when changing event-driven flows.
+- Add structured logs at significant integration boundaries and saga transitions: log stable correlation identifiers (for example order, payment, event, or compensation IDs), operation outcome, and retryable failures. Use `INFO` for durable state transitions, `DEBUG` for routine polling/queries, and `WARN`/`ERROR` for failures; never log credentials, access tokens, client secrets, payment details, or full request payloads.
 - Name unit/integration tests `*Test`; use JUnit 5 and the existing AssertJ/Mockito/Testcontainers patterns. Add tests in the module that owns the behavior.
 
 ### Frontend

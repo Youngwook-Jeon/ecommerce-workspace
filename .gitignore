@@ -8,6 +8,7 @@
 .m2-temp
 .m2repo
 .vscode
+.junie
 
 # docs
 /docs/private/
