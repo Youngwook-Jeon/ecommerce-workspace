@@ -2,7 +2,7 @@
 # From repo root: cp ecommerce-msa/.env.example ecommerce-msa/.env && make up
 
 .PHONY: help up down infra-up infra-stop infra-reset build apps apps-stop apps-wait \
-	apps-restart-payment debezium package run-jar stripe-listen frontend check-prereqs
+	apps-restart-payment debezium package run-jar stripe-listen frontend check-prereqs opensearch-up
 
 ROOT := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 SCRIPTS := $(ROOT)scripts
@@ -12,6 +12,7 @@ help:
 	@echo "  make up                 Infra + build + apps + debezium"
 	@echo "  make down               Stop apps + stop infra containers"
 	@echo "  make infra-up|stop|reset"
+	@echo "  make opensearch-up      Build and start OpenSearch only (with Nori)"
 	@echo "  make build              mvn clean install -DskipTests"
 	@echo "  make apps|apps-stop|apps-wait|apps-restart-payment"
 	@echo "  make debezium           Register Debezium connectors"
@@ -32,6 +33,9 @@ down:
 
 infra-up:
 	@bash $(SCRIPTS)/infra-up.sh
+
+opensearch-up:
+	@bash $(SCRIPTS)/opensearch-up.sh
 
 infra-stop:
 	@bash $(SCRIPTS)/infra-stop.sh

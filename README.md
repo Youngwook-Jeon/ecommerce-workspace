@@ -75,6 +75,7 @@ make up
 | Kafka UI | http://localhost:9090 |
 | Kafka Connect | http://localhost:8083 |
 | Keycloak | http://localhost:8080 |
+| OpenSearch (로컬 HTTP API) | http://localhost:9200 |
 
 백엔드 포트:
 
@@ -104,6 +105,8 @@ make down
 ```
 
 앱 프로세스와 인프라 컨테이너를 중지합니다. (Docker 볼륨은 유지)
+
+OpenSearch만 빌드·기동하려면 `make opensearch-up`을 사용합니다. 기본 인프라에도 포함되며 Nori 한국어 분석 플러그인을 제공합니다. `make infra-reset`은 검색 인덱스 볼륨도 삭제합니다. 연결·환경 설정과 확인 명령은 [OpenSearch 로컬 실행 문서](ecommerce-msa/deployment/docker/OPENSEARCH.md)를 참고하세요.
 
 ---
 
