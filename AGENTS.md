@@ -40,6 +40,8 @@ Prefer the narrowest relevant Maven module or frontend check while iterating, th
 
 ## Coding Conventions
 
+- Use English for all application-authored messages in both frontend and backend, including UI text, API response messages, validation/error messages, logs, and fixed status/facet labels. Keep message assertions and API examples consistent with the English text. User-generated content, catalog data, and non-English search test fixtures do not need to be translated.
+
 ### Backend
 
 - Follow the existing Java style: four-space indentation, explicit imports, one public top-level type per file, and names that describe the domain responsibility.
