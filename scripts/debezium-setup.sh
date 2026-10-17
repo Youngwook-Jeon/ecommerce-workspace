@@ -19,7 +19,8 @@ if ! bash ./scripts/setup-debezium.sh; then
   echo "Debezium setup failed. Common causes:" >&2
   echo "  - product/order/payment Flyway not applied yet (apps must be healthy first)" >&2
   echo "  - Connect scripting libs empty (make infra-up runs prepare-connect-scripting-libs.sh)" >&2
-  echo "  - Connector /status race after create (re-run: make debezium)" >&2
+  echo "  - PostgreSQL replication slot/WAL sender limits below the connector count" >&2
+  echo "  - Connector task FAILED (inspect /connectors/<name>/status for its trace)" >&2
   echo "See: ecommerce-msa/deployment/docker/DEBEZIUM.md" >&2
   echo "List connectors: curl -s http://localhost:8083/connectors | jq ." >&2
   exit 1
